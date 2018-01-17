@@ -14,54 +14,162 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+
+    <meta content="Decred is an autonomous digital currency. With a hybrid consensus system, it is built to be a decentralized, sustainable, and self-ruling currency where stakeholders make the rules." name="description">
+    <meta content="Decred - Autonomous Digital Currency" property="og:title">
+    <meta content="Decred is an autonomous digital currency. With a hybrid consensus system, it is built to be a decentralized, sustainable, and self-ruling currency where stakeholders make the rules." property="og:description">
+    <meta content="https://decred.org/ogMainSite.jpg" property="og:image">
+    <meta content="summary" name="twitter:card">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{{asset "css/normalize.css"}}" rel="stylesheet" type="text/css">
+    <link href="{{asset "css/components.css"}}" rel="stylesheet" type="text/css">
+    <link href="{{asset "css/decred-v5.css"}}" rel="stylesheet" type="text/css">
+    <noscript>
+        <link href="{{asset "css/decred-v5-nojs-edition.css"}}" rel="stylesheet" type="text/css">
+    </noscript>
+    <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+    <script type="text/javascript">
+        ! function(o, c) {
+          var n = c.documentElement,
+            t = " w-mod-";
+          n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+        }(window, document);
+      </script>
+    <link href="{{asset "images/32.png"}}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{asset "images/256.png"}}" rel="apple-touch-icon">
+    <link href="{{asset "css/dataTables.css"}}" rel="stylesheet" type="text/css">
+    <!--  Custom favicon  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset "images/favicon/apple-touch-icon.png?v=fi5jKKtbwv"}}">
+    <link rel="icon" type="image/png" href="{{asset "images/favicon/favicon-32x32.png?v=fi5jKKtbwv" sizes="32x32"}}">
+    <link rel="icon" type="image/png" href="{{asset "images/favicon/favicon-16x16.png?v=fi5jKKtbwv" sizes="16x16"}}">
+    <link rel="manifest" href="{{asset "images/favicon/manifest.json?v=fi5jKKtbwv"}}">
+    <link rel="mask-icon" href="{{asset "images/favicon/safari-pinned-tab.svg?v=fi5jKKtbwv"}}" color="#2973ff">
+    <link rel="shortcut icon" href="{{asset "images/favicon/favicon.ico?v=fi5jKKtbwv"}}">
+    <meta name="apple-mobile-web-app-title" content="Decred - Autonomous Digital Currency">
+    <meta name="application-name" content="Decred - Autonomous Digital Currency">
+    <meta name="msapplication-TileColor" content="#2973ff">
+    <meta name="msapplication-TileImage" content="{{asset "images/favicon/mstile-144x144.png?v=fi5jKKtbwv"}}">
+    <meta name="msapplication-config" content="{{asset "images/favicon/browserconfig.xml?v=fi5jKKtbwv"}}">
+    <meta name="theme-color" content="#ffffff">
+    <style type="text/css">
+      .footerblockindicator {
+          word-break: break-all;
+          -ms-word-break: break-all;
+          -webkit-word-break: break-word;
+          hyphens: auto;
+          -webkit-hyphens: auto;
+          -moz-hyphens: auto;
+        }
+        .turquoise {
+          fill: #2ed8a3;
+        }
+        .hand {
+          cursor: pointer;
+          cursor: hand;
+        }
+        @media (min-width: 1024px) and (max-width: 1212px) {
+          .logo {
+            margin-left: -20px;
+          }
+          .slogan,
+          .description,
+          .download-wallet,
+          .all-downloads {
+            margin-left: 105px;
+          }
+        }
+        @media (min-width: 992px) and (max-width: 1024px) {
+          .front {
+            width: 480px;
+          }
+          .width1100 {
+            width: 100%;
+            padding-left: 60px;
+            padding-right: 60px;
+          }
+          /*footer*/
+          .footerrowscolumn1.footerblockstats,
+          .footerrowscolumn1.footerblockicon {
+            width: 20.666667%;
+          }
+          .networkstatistics {
+            width: 237px;
+          }
+          /*statistics*/
+          .statisticsminedbar.borderradius4.margin20 {
+            width: 100%;
+          }
+          .column.percentmined {
+            width: 100%;
+          }
+          .column.supplydistribution {
+            width: 397px;
+          }
+          .column.development {
+            margin-left: 23px;
+            padding-left: 27px;
+          }
+        }
+        .column {
+          margin-bottom: 20px;
+        }
+      </style>
+       <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.decred.org/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Piwik Code -->
+
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
 </head>
+
 <body class="{{body_class}}">
 
-    <div class="site-wrapper">
+  <div class="site-wrapper">
+    {{{body}}}
+  </div>
 
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
+  {{> video_modal}}
 
-        {{!-- The footer at the very bottom of the screen --}}
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-                <nav class="site-footer-nav">
-                    <a href="{{@blog.url}}">Latest Posts</a>
-                    {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-
-    {{!-- The big email subscribe modal content --}}
-    {{#if @labs.subscribers}}
-    <div id="subscribe" class="subscribe-overlay">
-        <a class="subscribe-overlay-close" href="#"></a>
-        <div class="subscribe-overlay-content">
-            {{#if @blog.logo}}
-                <img class="subscribe-overlay-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
-            {{/if}}
-            <h1 class="subscribe-overlay-title">Subscribe to {{@blog.title}}</h1>
-            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-            {{subscribe_form placeholder="youremail@example.com"}}
-        </div>
-    </div>
-    {{/if}}
-
-    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/jquery.min.js" type="text/javascript"}}"></script>
+  <script type="text/javascript" src="{{asset "js/decred-v5.js" type="text/javascript"}}"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script type="text/javascript" src="{{asset "js/pts.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/verge.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/underscore.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/moment.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/jquery.cookie.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/jquery.dataTables.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/anime.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/platform.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+  <style>
+    html.w-mod-touch * {
+      background-attachment: none !important;
+    }
+    .text a,
+    .text a:active,
+    .text a:focus {
+      color: #69d3f5 !important;
+      text-decoration: none !important;
+    }
+    .text a:hover {
+      text-decoration: underline !important;
+    }
+  </style>
 
     {{#if pagination.pages}}
     <script>
