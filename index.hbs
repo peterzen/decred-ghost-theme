@@ -26,8 +26,8 @@ into the {body} of the default.hbs template --}}
                   <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">...</a></p>
                 </section>
                 <footer class="post-meta">
-                  {{#if author.profile_image}}<img src="{{author.profile_image}}" alt="Author image" />{{/if}}
-                  {{author}}
+                  {{#if primary_author.profile_image}}<img src="{{primary_author.profile_image}}" alt="Author image" />{{/if}}
+                  {{primary_author}}
                   {{tags prefix=" on "}}
                   <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
                 </footer>
